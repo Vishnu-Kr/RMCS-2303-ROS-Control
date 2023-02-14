@@ -23,12 +23,12 @@ The repository consist of steps and guide for controlling a Rhino DC Motor with 
 - VS Code with PlatformIO 
 &nbsp;
 ## **Circuit Diagram**
-![fig 1](./rmcs_connection.png)
+![fig 1](./images//rmcs_connection.png)
 
 &nbsp;
 ## **Procedure**:
 
-1. Create New Project ![fig 1](./platformio.png)
+1. Create New Project ![fig 2](./images//platformio.png)
 &nbsp;
 2. Name the project, Select Board teensey 4.1
 
@@ -45,7 +45,7 @@ The repository consist of steps and guide for controlling a Rhino DC Motor with 
 5. Go to src folder and create a file named RMCS2303.cpp and paste the below code:
 
 
-6. Go to libraries section and search for ros. Download the Rosserial Arduino Library by Michael Ferguson. Select the project name and add project dependency. ![fig 1](./platformio_lib.png)
+6. Go to libraries section and search for ros. Download the Rosserial Arduino Library by Michael Ferguson. Select the project name and add project dependency. ![fig 3](./images//platformio_lib.png)
 &nbsp;
 7. Compile the Code and upload to teensey.
 8. Open Terminal 1, run roscore
