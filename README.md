@@ -21,9 +21,18 @@ The repository consist of steps and guide for controlling a Rhino DC Motor with 
 ## **Pre-Requisite:**
 - ROS Noetic
 - VS Code with PlatformIO 
+
 &nbsp;
-## **Circuit Diagram**
-![fig 1](./images//rmcs_connection.png)
+&nbsp;
+
+## **Circuit Diagram & Connections**
+- TX -> RX (Pin 0)
+- RX -> TX (Pin 1)
+- GND -> GND
+- Configure slave id on Motor Driver. Follow the tutorial https://www.manualslib.com/manual/2141104/Rhino-Rmcs-2303.html?page=7
+
+
+- ![fig 1](./images//rmcs_connection.png)
 
 &nbsp;
 ## **Procedure**:
@@ -33,20 +42,34 @@ The repository consist of steps and guide for controlling a Rhino DC Motor with 
 2. Name the project, Select Board teensey 4.1
 
 
-3. Go to src/main.cpp, paste the following code:
+3. Create src/main.cpp, paste the code present in src folder. Change the CPR Value for adjusting the angle rotation of motor.
 &nbsp;
 &nbsp;
 
-4. Go to Include folder and make a file named RMCS2303.h and paste the following code:
+4. Go to Include folder and make a file named RMCS2303.h and paste the given code:
 
 
 &nbsp;
 
-5. Go to src folder and create a file named RMCS2303.cpp and paste the below code:
+5. Go to src folder and create a file named RMCS2303.cpp and paste the given code:
 
 
 6. Go to libraries section and search for ros. Download the Rosserial Arduino Library by Michael Ferguson. Select the project name and add project dependency. ![fig 3](./images//platformio_lib.png)
 &nbsp;
 7. Compile the Code and upload to teensey.
-8. Open Terminal 1, run roscore
-9. Open Terminal 2, run rosrun rosserial_python serial_node.py /tty
+8. Run the below commands in separate terminals:-
+
+9. Terminal 1: 
+```
+roscore
+```
+
+10. Terminal 2: 
+
+```
+rosrun rosserial_arduino serial_node.py /dev/ttyACM0 _baud:=9600
+```
+11. Terminal 3: 
+```
+*rostopic pub /position_in std_msgs/Float32 "data: 10.0" -1*
+```
