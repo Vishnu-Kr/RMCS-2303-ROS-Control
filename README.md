@@ -8,13 +8,8 @@ The repository consist of steps and guide for controlling a Rhino DC Motor with 
 - RMCS 2303 Driver -1
 - 12 V DC Power supply
 - BreadBoard
-- Jumper Wire
-- Teensy 4.1 or Arduino Mega
-
-    - Male-Male: 
-    - Male-Female:
-    - Female-Female:
-
+- Jumper Wires
+- Teensy 4.1
 
 &nbsp;
 
